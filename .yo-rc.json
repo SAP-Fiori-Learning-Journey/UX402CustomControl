@@ -1,0 +1,16 @@
+{
+  "@sapui5/generator-sapui5-templates": {
+    "promptValues": {
+      "ApplicationTitle": "Carriers",
+      "ApplicationDescription": "Carriers",
+      "FLP": false,
+      "ServiceBaseUri": "https://azrap001.eastus2.cloudapp.azure.com:44303/sap/opu/odata/IWFND/RMTSAMPLEFLIGHT/",
+      "DatasourceUrl": "/sap/opu/odata/IWFND/RMTSAMPLEFLIGHT/",
+      "ObjectCollection": "CarrierCollection",
+      "ObjectCollection_Key": "carrid",
+      "Object_Identifier": "CARRNAME",
+      "Object_Number": "",
+      "Object_UnitOfMeasure": "CURRCODE"
+    }
+  }
+}

@@ -1,0 +1,62 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:f="sap.ui.layout.form"
+	xmlns:l="sap.ui.layout" xmlns:cust="com.sap.training.ux402.fullscreen.UX402_FullScreenExercise.controls"
+	controllerName="com.sap.training.ux402.fullscreen.UX402_FullScreenExercise.controller.Flights"
+	xmlns:html="http://www.w3.org/1999/xhtml">
+	<Page navButtonPress="onNavBack" showNavButton="true" title="{CARRNAME}">
+		<content>
+			<l:VerticalLayout>
+				<ObjectHeader title="{CARRNAME}" number="" numberUnit="{CURRCODE}" titleHref="{URL}">
+					<attributes>
+						<ObjectAttribute text="{carrid}" />
+						<ObjectAttribute text="{URL}" />
+					</attributes>
+				</ObjectHeader>
+				<Table id="idFlights" mode="SingleSelectMaster" growing="true" growingThreshold="10"
+					items="{ path: 'carrierFlights', sorter: {path: 'carrid'} }">
+					<headerToolbar>
+						<Toolbar>
+							<Title text="Flights" level="H2" />
+						</Toolbar>
+					</headerToolbar>
+					<columns>
+						<Column width="12em">
+							<Text text="{i18n>carriername}" />
+						</Column>
+						<Column minScreenWidth="Tablet" demandPopin="true">
+							<Text text="{i18n>flightno}" />
+						</Column>
+						<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Right">
+							<Text text="{i18n>flightdate}" />
+						</Column>
+						<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Center">
+							<Text text="{i18n>seatmax}" />
+						</Column>
+						<Column hAlign="Right">
+							<Text text="{i18n>seatocc}" />
+						</Column>
+						<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Center">
+							<Text text="{i18n>planeInfo}" />							
+						</Column>
+						<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Center">
+							<Text text="{i18n>bookAction}" />
+						</Column>
+					</columns>
+					<items>
+						<ColumnListItem>
+							<cells>
+								<ObjectIdentifier title="{carrid}" text="{carrid}" />
+								<Text text="{connid}" />
+								<Text text="{path: 'fldate', type: 'sap.ui.model.type.Date'}" />
+								<Text text="{SEATSMAX}" />
+								<Text text="{SEATSOCC}" />
+								<cust:PlaneInfo planeType="{PLANETYPE}" seatMax="{SEATSMAX}" seatsOcc="{SEATSOCC}"/>
+								<cust:HoverButton id="HoverButton" text="{i18n>bookAction}" allowHover="true"
+									hoverText="{= ${SEATSMAX} - ${SEATSOCC} }" hover="onHover"/>
+							</cells>
+						</ColumnListItem>
+					</items>
+				</Table>
+			</l:VerticalLayout>
+		</content>
+	</Page>
+</mvc:View>
