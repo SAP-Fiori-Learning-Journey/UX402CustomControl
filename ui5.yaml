@@ -10,3 +10,9 @@ server:
     afterMiddleware: compression
     configuration:
       baseUri: https://azrap001.eastus2.cloudapp.azure.com:44303/sap/opu/odata/IWFND/RMTSAMPLEFLIGHT/
+  - name: ui5-middleware-livereload
+    afterMiddleware: compression
+    configuration:
+      debug: true
+      port: 35729
+      path: webapp
